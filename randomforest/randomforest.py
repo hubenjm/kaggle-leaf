@@ -37,7 +37,7 @@ for train_index, test_index in sss.split(train_data, labels): #shuffling data n 
 	y_train, y_test = labels[train_index], labels[test_index]
 
 #train model
-clf = RandomForestClassifier(n_estimators=100, max_depth=None, min_samples_split=2, random_state=40, verbose = True)
+clf = RandomForestClassifier(n_estimators=500, max_depth=None, min_samples_split=2, random_state=40, verbose = True)
 clf.fit(X_train, y_train)
 
 print('****Results****')
@@ -56,7 +56,7 @@ print("Log Loss: {}".format(ll))
 ##compute submission
 
 #use full training data set to fit this time
-clf = RandomForestClassifier(n_estimators=100, max_depth=None, min_samples_split=2, random_state=40, verbose = True)
+clf = RandomForestClassifier(n_estimators=500, max_depth=None, min_samples_split=2, random_state=40, verbose = True)
 clf.fit(train_data, labels)
 y_predict_prob = clf.predict_proba(test_data)
 
